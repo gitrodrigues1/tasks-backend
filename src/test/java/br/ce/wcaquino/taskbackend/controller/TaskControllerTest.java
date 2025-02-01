@@ -21,6 +21,8 @@ public class TaskControllerTest {
     @InjectMocks
     private TaskController taskController;
 
+    public static final Task TODO = new Task();
+
     @Before
     public void setup() {
         MockitoAnnotations.openMocks(this);
@@ -28,11 +30,10 @@ public class TaskControllerTest {
 
     @Test
     public void shouldNotSaveATaskWithoutDescription() {
-        Task todo = new Task();
-        todo.setDueDate(LocalDate.now());
+        TODO.setDueDate(LocalDate.now());
 
         try {
-            taskController.save(todo);
+            taskController.save(TODO);
         } catch (ValidationException e) {
             Assert.assertEquals("Fill the task description", e.getMessage());
         }
@@ -42,7 +43,6 @@ public class TaskControllerTest {
     public void shouldNotSaveATaskWithoutDate() {
         Task todo = new Task();
         todo.setTask("New Task");
-        // todo.setDueDate(LocalDate.now());
 
         try {
             taskController.save(todo);
