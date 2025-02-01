@@ -20,7 +20,7 @@ public class DateUtilsTest {
     }
 
     @Test
-    public void ShouldReturnFalseWhenPastDate() {
+    public void shouldReturnFalseWhenPastDate() {
         LocalDate date = LocalDate.of(2020,01,01);
         Assert.assertFalse(DateUtils.isEqualOrFutureDate(date));
     }
