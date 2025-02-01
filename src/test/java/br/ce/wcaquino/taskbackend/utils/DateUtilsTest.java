@@ -1,9 +1,9 @@
+package br.ce.wcaquino.taskbackend.utils;
+
 import java.time.LocalDate;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import br.ce.wcaquino.taskbackend.utils.DateUtils;
 
 public class DateUtilsTest {
 
